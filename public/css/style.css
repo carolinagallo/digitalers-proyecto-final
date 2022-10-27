@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Pacifico&display=swap");
+.card {
+  background-color: rgba(144, 187, 204, 0.733);
+  margin: 3px;
+}
+
+body {
+  background-image: url(https://res.cloudinary.com/djgnflsx0/image/upload/v1666729421/samples/logo/vox-pol-blog-part-2_gb674q.jpg);
+  background-repeat: no-repeat;
+  background-color: rgb(11, 20, 36);
+}
+
+.form-floating {
+  position: absolute;
+  z-index: 2;
+  margin-top: 1px;
+  width: 50%;
+  height: 50%;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+.btn-primary {
+  background-color: rgb(25, 158, 202);
+  color: white;
+}
+
+#likes-art,
+#text-art,
+#title-art {
+  color: black;
+}
+
+#buscador {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-outline-success {
+  color: white;
+}
+
+#button-create {
+  color: white;
+}
+
+#title-sup {
+  font-family: "pacifico";
+  font-size: 100;
+  color: rgb(174, 200, 255);
+}
+
+#title-ppal {
+  font-family: "Montserrat";
+  font-size: 400;
+  font-size: 120px;
+  color: rgb(174, 200, 255);
+  margin: 5%;
+  margin-bottom: 10%;
+}
+
+#title-ppal:hover {
+  color: rgb(22, 98, 160);
+}

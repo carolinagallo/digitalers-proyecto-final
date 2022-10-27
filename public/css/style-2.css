@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Questrial&display=swap");
+
+body {
+  background-image: url(https://res.cloudinary.com/djgnflsx0/image/upload/v1666729421/samples/logo/vox-pol-blog-part-2_gb674q.jpg);
+  background-color: rgb(11, 20, 36);
+  font-family: "Questrial";
+  font-size: 18px;
+}
+.container {
+  color: rgb(255, 255, 255);
+}
+
+.bi-arrow-left-circle-fill {
+  color: rgb(255, 255, 255);
+}
+
+.btn-light {
+  background-color: rgba(255, 255, 255, 0.301);
+}
+
+#show-description,
+#show-markdown {
+  background-color: rgba(144, 187, 204, 0.733);
+  color: black;
+  margin: 1%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#show-title {
+  padding: 2%;
+}
+#show-date {
+  font-size: 20px;
+  display: flex;
+  justify-content: end;
+}

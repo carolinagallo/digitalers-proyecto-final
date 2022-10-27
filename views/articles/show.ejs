@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/public/css/style-2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="show-title"><%= article.title %></h1>
+      <h3 id="show-markdown"><%= article.markdown %></h3>
+      <div id="show-description"><%= article.description %></div>
+      <div id="show-date"><%= article.createdAt.toLocaleDateString() %></div>
+      <a href="/" id="btn-back" class="btn btn-light">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+      </a>
+    </div>
+  </body>
+</html>

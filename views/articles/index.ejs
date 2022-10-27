@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- TITLE  -->
+      <div class="text-center">
+        <h2 class="card-title" id="title-sup">Blog de Notas</h2>
+        <h1 class="modal-title" id="title-ppal">Notes Blog</h1>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="d-flex justify-content-end m-2">
+        <a
+          id="button-create"
+          class="btn btn-dark"
+          href="/articles/new"
+          role="button"
+        >
+          <i class="bi bi-pen"></i>
+          Crear
+        </a>
+        <br />
+        <form
+          id="buscador"
+          action="/articles/search/by-title"
+          method="POST"
+          class="form-inline my-2 my-lg-0"
+        >
+          <input
+            name="title"
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- ARTICLES -->
+      <% articles.forEach(article => { %>
+      <div class="card" id="artPublicado">
+        <div class="card-body">
+          <h4 class="card-title" id="title-art"><%= article.title %></h4>
+          <p class="card-text" id="text-art"><%= article.markdown%></p>
+          <p class="card-text" id="likes-art">
+            <%= `${article.likes} ${article.likes == 1 ? "like" : "likes"}`%>
+          </p>
+        </div>
+        <!-- BUTTONS -->
+        <div class="card-footer text-muted">
+          <div class="d-flex justify-content-end m-2">
+            <!-- FAV -->
+            <form
+              action="/articles/<%= article.id%>/favorite?_method=put"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-light">
+                <i class=<%= ` ${article.favorite ? "bi-star-fill" : "bi-star"}`%>></i>
+               
+              </button>
+            </form>
+
+            <!-- LIKES -->
+            <form
+              action="/articles/<%= article.id%>/like?_method=put"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-light">
+                <i class="bi bi-heart-fill"></i>
+                +
+              </button>
+            </form>
+
+            <a
+              class="btn btn-light"
+              href="/articles/<%=article.slug%>"
+              role="button"
+              >Ver +
+            </a>
+            <a
+              class="btn btn-light"
+              href="/articles/edit/<%= article.id%>"
+              role="button"
+              >Editar
+            </a>
+            <form
+              action="/articles/<%= article.id%>?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-light">Eliminar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+  <script src="/public/js/apps.js"></script>
+</html>
